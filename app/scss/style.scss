@@ -1,0 +1,553 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'libs';
+@import 'global';
+
+.header{
+  &__wrapper{
+    background-color: $bg;
+  }
+  &__inner{
+    padding-top: 35px;
+  }
+}
+
+.header-top{
+  padding: 15px 0;
+  // &.header__top--active {
+    //   background-color: #181740;
+    //   opacity: 90%;
+    // }
+  &__wrapper{   
+    transition: all .3s;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 999;
+    transform: translateX(-50%);
+    width: 100%;
+    &.header-top__wrapper--active{
+      background-color: #fff;
+      opacity: 80%;
+      box-shadow: 0 0px 3px 0px #5a5959;
+    }
+  }
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__box{
+    display: flex;
+  }
+  &__btn{
+    display: none;
+  }
+  &__text{
+    margin-top: 45px;
+    margin-left: 30px;
+  }
+  &__title{
+    @extend %montserrat-900;
+    font-size: 18px;
+  }
+  &__contacts{
+    display: flex;
+  }
+  &__phone,
+  &__address{
+    display: flex;
+    align-items: center;
+  }
+  &__phone{
+    margin-left: 110px;
+  }
+  &__icon{
+    margin-right: 20px;
+  }
+  &__address-text,
+  &__phone-text{
+    font-size: 18px;
+    @extend %montserrat-800;
+  }
+}
+
+.header-content{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 110px;
+  &__menu{
+    display: flex;
+    margin-top: 40px;
+  }
+  &__item{
+    margin-left: 50px;
+    @extend %montserrat-600;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+  &__title{
+    font-size: 72px;
+    line-height: 100px;
+    @extend %montserrat-700;
+    max-width: 700px;
+    width: 100%;
+    margin-bottom: 70px;
+  }
+  &__subtitle{
+    width: 360px;
+    display: block;
+    margin-bottom: 90px;
+  }
+  &__buttons{
+    display: flex;
+    margin-bottom: 150px;
+  }
+  &__btn{
+    width: 360px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 3px solid $btn;
+    margin-right: 30px;
+    text-transform: uppercase;
+    @extend %montserrat-700;
+    color: #292c21;
+    &:last-child{
+      margin-right: 0;
+    }
+    &:hover{
+      background-color: $btn;
+      color: #fff;
+    }
+  }
+  &__slider-img{
+    max-width: 780px;
+    object-fit: contain;
+  }
+  &__slider{
+    .slick-arrow {
+      @extend %slick-arrow;
+      top: 440px;
+    }
+
+    .slick-next {
+      @extend %slick-next;
+    }
+    .slick-prev{
+      @extend %slick-prev;
+    }
+    .slick-dots{
+      bottom: 50px;
+      @extend %slick-dots;
+      button{
+        @extend %slick-dots__btn;
+      }
+      .slick-active{
+        button{     
+          background-color: $default;
+        }
+      }
+    }
+  }
+}
+
+.offer{
+  padding-bottom: 290px;
+  &__title{
+    margin: 80px 0 40px;
+  }
+  &__items{
+    width: 100%;
+  }
+  &__item{
+    max-width: 360px;
+    height: 450px;
+    background-color: $bg;
+    border-radius: 10px;
+    margin: 55px 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all .3s;
+    &:hover{
+      height: 560px;
+      margin-top: 0;
+      margin-bottom: 0;
+      background-color: $bg-light;
+      transition: all .3s;
+      a.offer__item-btn {
+        display: block;
+        max-width: 285px;
+        width: 100%;
+        height: 80px;
+        background-color: $btn;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 40px;
+        transition: all .3s;
+        margin: 20px auto 0;
+      }
+    }
+  }
+  &__item-img{
+    max-width: 300px;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 35px;
+  }
+  &__item-title,
+  &__item-price{
+    font-size: 24px;
+    @extend %montserrat-600;
+  }
+  &__item-title{
+    margin-bottom: 20px;
+  }
+  &__item-price{
+    margin-bottom: 15px;
+  }
+  a.offer__item-text {
+    text-decoration: underline;
+    font-size: 14px;
+  }
+  &__item-btn{
+    display: none;
+  }
+  .slick-arrow {
+    @extend %slick-arrow;
+  }
+  .slick-next {
+    @extend %slick-next;
+  }
+  .slick-prev {
+    @extend %slick-prev;
+  }
+  .slick-dots {
+    @extend %slick-dots;
+    bottom: -100px;
+    button {
+      @extend %slick-dots__btn;
+    }
+    .slick-active {
+      button {
+        background-color: $default;
+      }
+    }
+  }
+}
+
+.team{
+  padding-bottom: 160px;
+  &__title{
+    margin-bottom: 40px;
+  }
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    p{
+      margin-bottom: 20px;
+    }
+    &-img{
+      object-fit: contain;
+      margin-right: 30px;
+    }
+  }
+  &__item-info{
+    max-width: 750px
+  }
+  &__item-position{
+    @extend %montserrat-600;
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+  &__item-name{
+    font-size: 24px;
+    @extend %montserrat-700;
+    margin-bottom: 50px;
+  }
+  &__item-btn{
+    max-width: 360px;
+    width: 100%;
+    height: 100px;
+    border-radius: 50px;
+    background-color: $btn;
+    color: #fff;
+    margin-top: 80px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    @extend %montserrat-700;
+    text-transform: uppercase;
+  }
+  .slick-arrow {
+    top: 400px;
+    @extend %slick-arrow;
+  }
+
+  .slick-next {
+    @extend %slick-next;
+    right: -70px;
+  }
+
+  .slick-prev {
+    @extend %slick-prev;
+    left: -70px;
+  }
+
+  .slick-dots {
+    @extend %slick-dots;
+    bottom: -100px;
+
+    button {
+      @extend %slick-dots__btn;
+    }
+
+    .slick-active {
+      button {
+        background-color: $default;
+      }
+    }
+  }
+}
+
+.promo{
+  background-color: $bg;
+  padding: 80px 0 100px;
+  &__title{
+    margin-bottom: 45px;
+  }
+  &__inner{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 70px 30px;
+  }
+  &__item{
+    max-width: 750px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+  }
+  &__item-img{
+    margin-right: 70px;
+  }
+  &__item-title{
+    @extend %montserrat-700;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+  &__item-text{
+    max-width: 600px
+  }
+}
+
+.review{
+  padding: 60px 0 230px;
+  &__title{
+    margin-bottom: 50px;
+  }
+  &__items{
+    margin-bottom: 60px;
+  }
+  &__item{
+    max-width: 750px;
+    height: 250px;
+    width: 100%;
+    background-color: $bg;
+    border-radius: 10px;
+    padding: 50px 10px 35px 40px;
+  }
+  &__name{
+    font-size: 24px;
+    @extend %montserrat-700;
+    margin-bottom: 10px;
+  }
+  &__text{
+    max-width: 600px;
+  }
+  &__btn{
+    max-width: 360px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    border: 3px solid $btn;
+    cursor: pointer;
+    font-size: 18px;
+    @extend %montserrat-700;
+    border-radius: 50px;
+    margin: 0 auto;
+    &:hover{
+      background-color: $btn;
+      color: #fff;
+    }
+  }
+  .slick-arrow {
+    top: 100px;
+    @extend %slick-arrow;
+  }
+
+  .slick-next {
+    @extend %slick-next;
+  }
+
+  .slick-prev {
+    @extend %slick-prev;
+  }
+
+  .slick-dots {
+    @extend %slick-dots;
+    bottom: -260px;
+
+    button {
+      @extend %slick-dots__btn;
+      margin: 0 10px;
+    }
+
+    .slick-active {
+      button {
+        background-color: $default;
+      }
+    }
+  }
+}
+
+.contact{
+  margin-bottom: 180px;
+  &__inner{
+    background-color: $bg;
+    display: flex;
+    padding: 70px 0 85px;
+  }
+  &__inner-img{
+    position: absolute;
+    transform: translateY(-15%) translateX(30%);
+  }
+  &__title{
+    margin-bottom: 100px;
+  }
+}
+
+.contact-form{
+  max-width: 620px;
+  margin-right: 130px;
+  margin-left: auto;
+  &__title{
+    font-size: 30px;
+    @extend %montserrat-700;
+    margin-bottom: 60px;
+  }
+  &__name,
+  &__phone{
+    @extend %montserrat-600;
+  }
+  &__phone{
+    margin-top: 45px;
+  }
+  &__input{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid $default;
+    padding: 10px 15px;
+    width: 100%;
+    &::placeholder{
+      color: $bg-light;
+    }
+  }
+  &__box{
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+  &__btn{
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    @extend %montserrat-700;
+    background-color: $btn;
+    border-radius: 50px;
+    max-width: 360px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+  }
+  &__box-checkbox {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    position: absolute;
+    &:checked+.contact-form__checkbox {
+      background-image: url(../images/icons/check-on.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+  &__checkbox {
+    margin-right: 20px;
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 3px;
+    background-color: $bg-light;
+  }
+}
+
+.footer{
+  background-color: $bg;
+  &__inner{
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__map{
+    border-radius: 10px;
+    max-width: 750px;
+    width: 100%;
+  }
+  &__title{
+    margin-bottom: 45px;
+    padding-top: 35px;
+  }
+  &__subtitle{
+    margin-bottom: 20px;
+  }
+  &__contacts{
+    margin-bottom: 85px;
+  }
+  &__socials{
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+  }
+  &__social-link{
+    margin-left: 45px;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+  &__politics{
+    text-decoration: underline;
+  }
+}
+
+@import 'media';
+

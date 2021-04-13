@@ -1,0 +1,37 @@
+html,
+body {
+  height: 100%;
+}
+
+
+body {
+  @extend %montserrat-500;
+  color: $default;
+  font-family: 16px;
+  line-height: 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: $default;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.title{
+  @extend %montserrat-700;
+  font-size: 60px;
+  color: $default;
+  line-height: 72px;
+}
